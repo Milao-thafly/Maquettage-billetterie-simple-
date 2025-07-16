@@ -1,0 +1,67 @@
+body {
+      background-color: #f0f2f5; /* очень светлый серо-голубой фон */
+    }
+
+    .card {
+      background-color: #5a7d9a; /* серо-голубой с приглушённым тоном */
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(90, 125, 154, 0.5);
+      color: white;
+    }
+
+    h3 {
+      color: #e6ebf1;
+      font-weight: 700;
+    }
+
+    input.form-control {
+      background-color: transparent;
+      border: 1.5px solid #cbd3dc;
+      color: white;
+    }
+
+    input.form-control::placeholder {
+      color: #b0b9c6;
+    }
+
+    .dropdown .btn {
+      background-color: transparent;
+      color: #e6ebf1;
+      border: 1.5px solid #cbd3dc;
+      font-weight: 600;
+    }
+
+    .dropdown .btn:hover,
+    .dropdown .btn:focus {
+      background-color: #9bb1c1;
+      color: #243746;
+      border-color: #7892b0;
+    }
+
+    .dropdown-menu {
+      top: 100% !important;
+      bottom: auto !important;
+      transform: none !important;
+      background-color: #5a7d9a;
+      border: none;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: #e6ebf1;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: #43607d;
+      color: white;
+    }
+
+    button.btn-primary {
+      background-color: #e6ebf1;
+      color: #5a7d9a;
+      font-weight: 600;
+    }
+
+    button.btn-primary:hover {
+      background-color: #cbd3dc;
+      color: #364a60;
+    }
