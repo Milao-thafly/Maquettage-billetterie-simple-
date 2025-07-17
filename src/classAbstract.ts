@@ -1,45 +1,45 @@
 export abstract class AbsctractClass{
-    private pays: string;
-    private ville: string;
+    private label: string;
+    private value: string;
     private prix: number;
-    private horraires: number;
+    private perks: string;
 
-    constructor(pays: string, ville: string, prix: number, horraires: number){
-        this.pays = pays
-        this.ville = ville 
+    constructor(label: string, value: string, prix: number, perks: string){
+        this.label = label
+        this.value = value 
         this.prix = prix
-        this.horraires = horraires
+        this.perks = perks
     }
 
-    getPays(): string{
-        return this.pays
+    getLabel(): string{
+        return this.label
     }
 
-    setPays( newPays: string): void {
-        this.pays = newPays
+    setLabel( newLabel: string): void {
+        this.label = newLabel
     } 
 
-    getVille(): string{
-        return this.ville
+    getValue(): string{
+        return this.value
     }
 
-    setVille( newVille: string): void {
-        this.ville = newVille
+    setValue( newValue: string): void {
+        this.value = newValue
     } 
 
     getPrix(): number{
         return this.prix
     }
 
-    setPrix( newPrix: number): void {
+    setPrix(newPrix: number): void {
         this.prix = newPrix
     } 
 
-    getHorraires(): number{
-        return this.horraires
+    getPerks(): string{
+        return this.perks
     }
 
-    setHorraires( newHorraires: number): void {
-        this.horraires = newHorraires
+    setPerks(newPerks: string): void {
+        this.perks = newPerks
     } 
 }
