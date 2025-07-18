@@ -1,4 +1,3 @@
-"use strict";
 const formulaire = document.getElementById("formulaire");
 formulaire.addEventListener("submit", (e) => {
     e.preventDefault();
