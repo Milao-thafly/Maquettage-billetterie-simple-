@@ -47,3 +47,4 @@ formulaire.addEventListener("submit", (e) => {
     console.log("Formulaire soumis :", data);
     alert("Formulaire soumis avec succès !");
 });
+export {};
