@@ -1,4 +1,3 @@
-"use strict";
 const formulaire = document.getElementById("formulaire");
 formulaire.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -48,3 +47,4 @@ formulaire.addEventListener("submit", (e) => {
     console.log("Formulaire soumis :", data);
     alert("Formulaire soumis avec succès !");
 });
+
