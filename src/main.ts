@@ -1,5 +1,3 @@
-import { Validator } from "./validator.js";
-
 const formulaire = document.getElementById("formulaire") as HTMLFormElement;
 formulaire.addEventListener("submit", (e) => {
   e.preventDefault();
