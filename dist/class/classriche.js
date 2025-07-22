@@ -4,7 +4,7 @@ export class ClassRiche extends AbsctractClass {
         super(label, value, prix, percks);
     }
 }
-ClassRiche.LABEL = "";
-ClassRiche.VALUE = "";
-ClassRiche.PRIX = 100;
-ClassRiche.PRECKS = "";
+ClassRiche.LABEL = "FIRST";
+ClassRiche.VALUE = "FIRST";
+ClassRiche.PRIX = 0.5;
+ClassRiche.PRECKS = "CHAUFFERU";
