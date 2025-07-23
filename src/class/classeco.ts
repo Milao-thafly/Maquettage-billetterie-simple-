@@ -1,13 +1,29 @@
 import { AbsctractClass } from "./classAbstract.js";
 
-export class ClassEco extends AbsctractClass{
-    private static LABEL ="ECO"
-    private static VALUE ="ECO"
-    private static PRIX = 0.1
-    private static PERKS = "CHAUFFERU"
+export class ClassEco extends AbsctractClass {
+  constructor() {
+    super(ClassEco.label, ClassEco.value, ClassEco.prix, ClassEco.perks);
+  }
 
-    constructor(label: string, value: string, prix: number, perks: string){
-        super(label, value, prix, perks)
-    }
+  private static readonly LABEL = "ECO";
+  private static readonly VALUE = "ECO";
+  private static readonly PRIX = 0.1;
+  private static readonly PERKS = "CHAUFFERU";
 
+  // Getters estáticos
+  static get label(): string {
+    return this.LABEL;
+  }
+
+  static get value(): string {
+    return this.VALUE;
+  }
+
+  static get prix(): number {
+    return this.PRIX;
+  }
+
+  static get perks(): string {
+    return this.PERKS;
+  }
 }

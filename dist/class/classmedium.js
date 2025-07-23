@@ -1,12 +1,23 @@
-Classe;
-medium;
 import { AbsctractClass } from "./classAbstract.js";
-export class ClassMedium extends AbsctractClass {
-    constructor(label, value, prix, perks) {
-        super(label, value, prix, perks);
+export class ClassEco extends AbsctractClass {
+    constructor() {
+        super(ClassEco.label, ClassEco.value, ClassEco.prix, ClassEco.perks);
+    }
+    // Getters estáticos
+    static get label() {
+        return this.LABEL;
+    }
+    static get value() {
+        return this.VALUE;
+    }
+    static get prix() {
+        return this.PRIX;
+    }
+    static get perks() {
+        return this.PERKS;
     }
 }
-ClassMedium.LABEL = "BUSINESS";
-ClassMedium.VALUE = "BUSINESS";
-ClassMedium.PRIX = 0.25;
-ClassMedium.PERKS = "CHAUFFERU";
+ClassEco.LABEL = "ECO";
+ClassEco.VALUE = "ECO";
+ClassEco.PRIX = 0.1;
+ClassEco.PERKS = "CHAUFFERU";
