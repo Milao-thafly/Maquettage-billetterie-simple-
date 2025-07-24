@@ -1,4 +1,4 @@
-export abstract class AbsctractClass{
+export class ClassTrip{
     private label: string;
     private value: string;
     private prix: number;
@@ -15,31 +15,24 @@ export abstract class AbsctractClass{
         return this.label
     }
 
-    setLabel( newLabel: string): void {
-        this.label = newLabel
-    } 
-
     getValue(): string{
         return this.value
     }
-
-    setValue( newValue: string): void {
-        this.value = newValue
-    } 
 
     getPrix(): number{
         return this.prix
     }
 
-    setPrix(newPrix: number): void {
-        this.prix = newPrix
-    } 
 
     getPerks(): string{
         return this.perks
     }
 
-    setPerks(newPerks: string): void {
-        this.perks = newPerks
-    } 
+ 
 }
+
+const classEco = new ClassTrip("eco",  "eco", 0.1, "Siège a côté de la fenetre en cas de crash t'est le premier." );
+
+const classMedium = new ClassTrip("Medium",  "Medium", 0.25, "Un siège normal pour une personne normal" );
+
+const classRiche = new ClassTrip("Riche",  "Riche", 0.5, "Tout ce que vous voudrez my looord" );

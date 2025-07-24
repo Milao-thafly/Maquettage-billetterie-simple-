@@ -1,4 +1,4 @@
-export class AbsctractClass {
+export class ClassTrip {
     constructor(label, value, prix, perks) {
         this.label = label;
         this.value = value;
@@ -8,25 +8,16 @@ export class AbsctractClass {
     getLabel() {
         return this.label;
     }
-    setLabel(newLabel) {
-        this.label = newLabel;
-    }
     getValue() {
         return this.value;
-    }
-    setValue(newValue) {
-        this.value = newValue;
     }
     getPrix() {
         return this.prix;
     }
-    setPrix(newPrix) {
-        this.prix = newPrix;
-    }
     getPerks() {
         return this.perks;
     }
-    setPerks(newPerks) {
-        this.perks = newPerks;
-    }
 }
+const classEco = new ClassTrip("eco", "eco", 0.1, "Siège a côté de la fenetre en cas de crash t'est le premier.");
+const classMedium = new ClassTrip("Medium", "Medium", 0.25, "Un siège normal pour une personne normal");
+const classRiche = new ClassTrip("Riche", "Riche", 0.5, "Tout ce que vous voudrez my looord");
