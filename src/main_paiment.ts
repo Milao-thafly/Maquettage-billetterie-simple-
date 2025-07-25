@@ -5,8 +5,8 @@ formulaire_paiement.addEventListener("submit", (e) => {
 
     const formData = new FormData(formulaire_paiement);
     const errors = [];
-        // ?.toString() ?? "" : - ?.toString() fait que formData.get("") n'est pas null || unedifed
-        //                      - ?? ""  fait que si formData.get("")?.toString() est null || unedifed alors il prend un champ vide et crée une erreur
+    // ?.toString()?? "" : - ?.toString() fait que formData.get("") n'est pas null || unedifed
+    //                      - ?? ""  fait que si formData.get("")?.toString() est null || unedifed alors il prend un champ vide et crée une erreur
     const data = {
         name_card: formData.get("name_card")?.toString() ?? "",
         number_card: formData.get("number_card")?.toString() ?? "",
@@ -20,7 +20,7 @@ formulaire_paiement.addEventListener("submit", (e) => {
 
         let sum = 0;
         let shouldDouble = false;
-         
+
         // On parcourt les chiffres de droite à gauche
         for (let i = cleaned.length - 1; i >= 0; i--) {
             let digit = parseInt(cleaned[i]);
@@ -37,7 +37,7 @@ formulaire_paiement.addEventListener("submit", (e) => {
         return sum % 10 === 0;
     }
 
-    if (!data.name_card || data.name_card.length < 10) {
+    if (!data.name_card || data.name_card.length < 2) {
         errors.push("Le nom de la carte est invalide");
     }
 
@@ -47,7 +47,7 @@ formulaire_paiement.addEventListener("submit", (e) => {
 
     const regexp_date_card = /^(0[1-9]|1[0-2])\/(20[2-9][0-9])$/;
 
-    if (!data.date_card||!regexp_date_card.test(data.date_card)) {
+    if (!data.date_card || !regexp_date_card.test(data.date_card)) {
         errors.push("La date d'expiration est invalide et doit etre MM/AAAA.")
     }
 
@@ -60,14 +60,11 @@ formulaire_paiement.addEventListener("submit", (e) => {
 
         if (container_error) {
             container_error.innerHTML = ""; // Nettoie les erreurs précédentes
-        }
-
-        if (container_error) {
             const ul = document.createElement("ul");
 
-            errors.forEach ((error) => {
+            errors.forEach((error) => {
                 const li = document.createElement("li");
-                li.textContent = error; 
+                li.textContent = error;
                 ul.appendChild(li);
             });
 
@@ -76,6 +73,29 @@ formulaire_paiement.addEventListener("submit", (e) => {
         return;
     };
 
-    console.log("Formulaire soumis :", data);
-    alert("Formulaire soumis avec succès !");
+    const container_ticket = document.getElementById("payment_ticket");
+
+    if (container_ticket) {
+        const last4 = data.number_card.slice(-4);
+        container_ticket.innerHTML = `
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; background: #5a7d9a;">
+            <h3>🎫 Ticket de paiement</h3>
+            <p><strong>Nom :</strong> ${data.name_card}</p>
+            <p><strong>Carte :</strong> **** **** **** ${last4}</p>
+            <p><strong>Expiration :</strong> ${data.date_card}</p>
+            <p style="color: green; font-weight: bold;">✅ Paiement effectué avec succès !</p>
+        </div>
+    `;
+        container_ticket.style.display = "block";
+    }
+    
+    const container_error = document.getElementById("error");
+
+    if (formulaire_paiement && container_error) {
+        
+        formulaire_paiement.style.display = "none";
+        container_error.style.display = "none";
+        
+    }
+
 });

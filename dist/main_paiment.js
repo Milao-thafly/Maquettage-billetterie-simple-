@@ -5,7 +5,7 @@ formulaire_paiement.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(formulaire_paiement);
     const errors = [];
-    // ?.toString() ?? "" : - ?.toString() fait que formData.get("") n'est pas null || unedifed
+    // ?.toString()?? "" : - ?.toString() fait que formData.get("") n'est pas null || unedifed
     //                      - ?? ""  fait que si formData.get("")?.toString() est null || unedifed alors il prend un champ vide et crée une erreur
     const data = {
         name_card: (_b = (_a = formData.get("name_card")) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : "",
@@ -31,7 +31,7 @@ formulaire_paiement.addEventListener("submit", (e) => {
         }
         return sum % 10 === 0;
     }
-    if (!data.name_card || data.name_card.length < 10) {
+    if (!data.name_card || data.name_card.length < 2) {
         errors.push("Le nom de la carte est invalide");
     }
     if (!data.number_card || !isValidCardNumber(data.number_card)) {
@@ -48,8 +48,6 @@ formulaire_paiement.addEventListener("submit", (e) => {
         const container_error = document.getElementById("error");
         if (container_error) {
             container_error.innerHTML = ""; // Nettoie les erreurs précédentes
-        }
-        if (container_error) {
             const ul = document.createElement("ul");
             errors.forEach((error) => {
                 const li = document.createElement("li");
@@ -61,6 +59,23 @@ formulaire_paiement.addEventListener("submit", (e) => {
         return;
     }
     ;
-    console.log("Formulaire soumis :", data);
-    alert("Formulaire soumis avec succès !");
+    const container_ticket = document.getElementById("payment_ticket");
+    if (container_ticket) {
+        const last4 = data.number_card.slice(-4);
+        container_ticket.innerHTML = `
+        <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; background: #5a7d9a;">
+            <h3>🎫 Ticket de paiement</h3>
+            <p><strong>Nom :</strong> ${data.name_card}</p>
+            <p><strong>Carte :</strong> **** **** **** ${last4}</p>
+            <p><strong>Expiration :</strong> ${data.date_card}</p>
+            <p style="color: green; font-weight: bold;">✅ Paiement effectué avec succès !</p>
+        </div>
+    `;
+        container_ticket.style.display = "block";
+    }
+    const container_error = document.getElementById("error");
+    if (formulaire_paiement && container_error) {
+        formulaire_paiement.style.display = "none";
+        container_error.style.display = "none";
+    }
 });
