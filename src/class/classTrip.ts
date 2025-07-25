@@ -1,31 +1,31 @@
 export class ClassTrip{
-    private label: string;
-    private value: string;
-    private prix: number;
-    private perks: string;
+    #label: string;
+    #value: string;
+    #prix: number;
+    #perks: string;
 
     constructor(label: string, value: string, prix: number, perks: string){
-        this.label = label
-        this.value = value 
-        this.prix = prix
-        this.perks = perks
+        this.#label = label
+        this.#value = value 
+        this.#prix = prix
+        this.#perks = perks
     }
 
     getLabel(): string{
-        return this.label
+        return this.#label
     }
 
     getValue(): string{
-        return this.value
+        return this.#value
     }
 
     getPrix(): number{
-        return this.prix
+        return this.#prix
     }
 
 
     getPerks(): string{
-        return this.perks
+        return this.#perks
     }
 
  
@@ -36,3 +36,5 @@ const classEco = new ClassTrip("eco",  "eco", 0.1, "Siège a côté de la fenetr
 const classMedium = new ClassTrip("Medium",  "Medium", 0.25, "Un siège normal pour une personne normal" );
 
 const classRiche = new ClassTrip("Riche",  "Riche", 0.5, "Tout ce que vous voudrez my looord" );
+
+export const allClasses = [classEco, classMedium, classRiche]
