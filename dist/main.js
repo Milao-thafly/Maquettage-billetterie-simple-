@@ -1,4 +1,5 @@
-"use strict";
+// "use strict";
+import { saveFormData } from "./localStorage.js";
 const formulaire = document.getElementById("formulaire");
 document.querySelectorAll("input[name='classe']").forEach((radio) => {
     radio.addEventListener("input", () => {
@@ -59,7 +60,12 @@ formulaire.addEventListener("submit", (e) => {
         }
         return;
     }
-<<<<<<< HEAD
+    // function redirectForm(){
+    //   if(formulaire.checkValidity()){
+    //   }
+    // }
+    saveFormData(data);
+    window.location.href = "paiement.html";
     alert(`Formulaire soumis avec succès !
 
 Nom : ${data.username}
@@ -70,8 +76,5 @@ Téléphone : ${data.phone}
 Classe : ${data.classe}
 Destination : ${data.pays}`);
     console.log("Âge :", data.age);
-=======
-    console.log("Formulaire soumis :", data);
-    alert("Formulaire soumis avec succès !");
->>>>>>> origin/master
+    // redirectForm()
 });

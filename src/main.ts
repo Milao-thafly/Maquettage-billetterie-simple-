@@ -1,6 +1,6 @@
 
-"use strict";
-
+// "use strict";
+import { saveFormData } from "./localStorage.js";
 
 const formulaire = document.getElementById("formulaire") as HTMLFormElement;
 
@@ -81,8 +81,19 @@ formulaire.addEventListener("submit", (e) => {
     return;
   }
 
+// function redirectForm(){
 
- alert(`Formulaire soumis avec succès !
+//   if(formulaire.checkValidity()){
+
+//   }
+// }
+
+
+saveFormData(data)
+
+window.location.href = "paiement.html"
+
+alert(`Formulaire soumis avec succès !
 
 Nom : ${data.username}
 Prénom : ${data.first_name}
@@ -92,7 +103,9 @@ Téléphone : ${data.phone}
 Classe : ${data.classe}
 Destination : ${data.pays}`);
 
-
+  
  
   console.log("Âge :", data.age);
+
+  // redirectForm()
 });

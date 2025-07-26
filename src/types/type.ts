@@ -11,3 +11,4 @@ import { Destination } from "../class/object"
     { value: "brussels", distanceFromParis: 300 },
     { value: "copenhagen", distanceFromParis: 1380 },
   ];
+
