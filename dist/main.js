@@ -20,7 +20,9 @@ document.querySelectorAll("input[name='pays']").forEach((radio) => {
 formulaire.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(formulaire);
+    // const generatedId = generateCode();
     const data = {
+        //id: generatedId, 
         username: formData.get("nom"),
         first_name: formData.get("prenom"),
         email: formData.get("email"),
@@ -74,6 +76,7 @@ Email : ${data.email}
 Téléphone : ${data.phone}
 Classe : ${data.classe}
 Destination : ${data.pays}`);
+    //Id : ${data.id}`);
     console.log("Âge :", data.age);
     window.location.href = "confirmation.html";
     // redirectForm()

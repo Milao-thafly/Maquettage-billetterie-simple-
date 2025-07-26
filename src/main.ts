@@ -1,6 +1,7 @@
 
 // "use strict";
 import { saveFormData } from "./localStorage.js";
+import { generateCode } from "./generation.js";
 
 const formulaire = document.getElementById("formulaire") as HTMLFormElement;
 
@@ -29,8 +30,10 @@ formulaire.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const formData = new FormData(formulaire);
+ // const generatedId = generateCode();
 
   const data = {
+    //id: generatedId, 
     username: formData.get("nom"),
     first_name: formData.get("prenom"),
     email: formData.get("email"),
@@ -102,6 +105,7 @@ Email : ${data.email}
 Téléphone : ${data.phone}
 Classe : ${data.classe}
 Destination : ${data.pays}`);
+//Id : ${data.id}`);
 
   
  

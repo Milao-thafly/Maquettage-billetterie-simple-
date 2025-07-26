@@ -1,39 +1,28 @@
 //Générer un code de réservation unique.
 
-const paymentCalculator = new vaVoirLeMonde();
 
-function generateCode(): string {
-    return 'RES-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+
+
+export function generateCode(): string {
+    const timestamp = Date.now().toString(36).toUpperCase();
+    const random = Math.random().toString(36).substring(2, 8).toUpperCase();
+    return `RES-${timestamp}-${random}`;
 }
 
-/////////////////////////////////////////////////////////////////
+// generation d'un id
 
-//enregistrer la reserve
-
-
-function saveReservation(data: any): string {
-    const code = generateCode();
-    const reservation = {
-        code: code,
-        ...data,
-        date: new Date().toLocaleDateString('fr-FR')
-    };
-    
-    localStorage.setItem(`reservation_${code}`, JSON.stringify(reservation));
-    return code;
+export function generateId(): string {
+    return Date.now().toString();
 }
 
-//checher la reserve 1
+// generation d'un code de reservation
 
-function findReservation(code: string): any {
-    const stored = localStorage.getItem(`reservation_${code.toUpperCase()}`);
-    return stored ? JSON.parse(stored) : null;
+export function generateShortCode(length: number = 6): string {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
 }
 
-
-//confirmer la reserve
-function showConfirmation(code: string, data: any): void {
-    const container = document.querySelector('.card');
-    if (!container) return;
-
-///////////////////////////////////////////////
