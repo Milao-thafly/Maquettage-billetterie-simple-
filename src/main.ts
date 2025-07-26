@@ -91,7 +91,7 @@ formulaire.addEventListener("submit", (e) => {
 
 saveFormData(data)
 
-window.location.href = "paiement.html"
+
 
 alert(`Formulaire soumis avec succès !
 
@@ -105,7 +105,7 @@ Destination : ${data.pays}`);
 
   
  
-  console.log("Âge :", data.age);
-
+console.log("Âge :", data.age);
+window.location.href = "confirmation.html"
   // redirectForm()
 });

@@ -11,6 +11,6 @@ export function saveFormData(data) {
     localStorage.setItem("formulaire", JSON.stringify(data));
 }
 export function loadFormData() {
-    const raw = localStorage.getItem("formulaire");
-    return raw ? JSON.parse(raw) : null;
+    const getinfo = localStorage.getItem("formulaire");
+    return getinfo ? JSON.parse(getinfo) : null;
 }

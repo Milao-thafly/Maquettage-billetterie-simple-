@@ -65,7 +65,6 @@ formulaire.addEventListener("submit", (e) => {
     //   }
     // }
     saveFormData(data);
-    window.location.href = "paiement.html";
     alert(`Formulaire soumis avec succès !
 
 Nom : ${data.username}
@@ -76,5 +75,6 @@ Téléphone : ${data.phone}
 Classe : ${data.classe}
 Destination : ${data.pays}`);
     console.log("Âge :", data.age);
+    window.location.href = "confirmation.html";
     // redirectForm()
 });

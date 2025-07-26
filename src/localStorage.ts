@@ -15,6 +15,6 @@ export function saveFormData(data: any): void {
 }
 
 export function loadFormData(): any | null {
-  const raw = localStorage.getItem("formulaire");
-  return raw ? JSON.parse(raw) : null;
+  const getinfo = localStorage.getItem("formulaire");
+  return getinfo ? JSON.parse(getinfo) : null;
 }
