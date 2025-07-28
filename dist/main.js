@@ -1,4 +1,3 @@
-// "use strict";
 import { saveFormData } from "./localStorage.js";
 const formulaire = document.getElementById("formulaire");
 document.querySelectorAll("input[name='classe']").forEach((radio) => {

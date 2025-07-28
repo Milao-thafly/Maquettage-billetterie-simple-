@@ -10,4 +10,3 @@ return totalQuiFaitMal;
 }
 }
 const voyageVOYAGE = new vaVoirLeMonde();
-console.log(voyageVOYAGE.payFromDistance("riche", 340))

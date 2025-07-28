@@ -7,4 +7,3 @@ export class vaVoirLeMonde {
     }
 }
 const voyageVOYAGE = new vaVoirLeMonde();
-console.log(voyageVOYAGE.payFromDistance("riche", 340));

@@ -1,6 +1,7 @@
 
-// "use strict";
+
 import { saveFormData } from "./localStorage.js";
+
 
 const formulaire = document.getElementById("formulaire") as HTMLFormElement;
 
@@ -106,6 +107,9 @@ Destination : ${data.pays}`);
   
  
 console.log("Âge :", data.age);
+
+
+
 window.location.href = "confirmation.html"
   // redirectForm()
 });
