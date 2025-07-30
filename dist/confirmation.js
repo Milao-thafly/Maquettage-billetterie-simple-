@@ -1,9 +1,11 @@
 import { loadFormData } from "./localStorage.js";
+import { vaVoirLeMonde } from "./class/payFromDistance.js";
 const btnpasse = document.getElementById("btnpasse");
-// Affiche les infos du formulaire dans la div getInfo
+const calcul = new vaVoirLeMonde();
 document.addEventListener("DOMContentLoaded", () => {
     const data = loadFormData();
     const logContainer = document.getElementById("getInfo");
+    const prix = localStorage.getItem("prix");
     if (!logContainer || !data)
         return;
     logContainer.innerHTML = `
@@ -15,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li class="list-group-item">Téléphone : ${data.phone}</li>
             <li class="list-group-item">Classe : ${data.classe}</li>
             <li class="list-group-item">Destination : ${data.pays}</li>
+            <li class="list-group-item">Prix estimé : ${prix} € </li>
         </ul>
         
     `;

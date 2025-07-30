@@ -1,3 +1,4 @@
+import {vaVoirLeMonde}  from "./class/payFromDistance.js"
 
 
 
@@ -11,3 +12,10 @@ export function loadFormData(): any | null {
   return getinfo ? JSON.parse(getinfo) : null;
 }
 
+export function savePrice(classValue: string, distance: number): void {
+const voyageVOYAGE = new vaVoirLeMonde();
+const prix = voyageVOYAGE.payFromDistance(classValue, distance);
+// localStorage.setItem("prix", JSON.stringify(prix));
+localStorage.setItem("prix", prix.toString());
+
+}
